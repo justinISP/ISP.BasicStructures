@@ -1,0 +1,4 @@
+prototype(ISP.BasicStructure:CarouselItemPic) < prototype(Neos.Neos:Content) {
+    templatePath = 'resource://ISP.BasicStructure/Private/Templates/FusionObjects/CarouselItemPic.html'
+    image = ${q(node).property('image')}
+}

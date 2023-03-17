@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+<html>
+<head>
+    <f:section name="stylesheets">
+    </f:section>
+    <f:section name="headScripts">
+    </f:section>
+</head>
+<body>
+<f:section name="body">
+
+
+    <header class="site-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12 d-flex flex-wrap">
+                    {TopContact -> f:format.raw()}
+                </div>
+
+                <div class="col-lg-3 col-12 ms-auto d-lg-block d-none language-nav">
+                    {parts.languageMenu -> f:format.raw()}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="{f:uri.resource(path: 'Images/logo_dummy.png', package: 'ISP.BasicStructure')}" alt="Dummy-Logo" title="Home">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                {parts.menu -> f:format.raw()}
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero-section hero-section-full-height">
+            <div class="container-fluid">
+                <div class="row">
+                    {content.content3 -> f:format.raw()}
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="row">
+                    <div class="breadcrumb-wrap">
+                        <div class="container">
+                            {parts.breadcrumb -> f:format.raw()}
+                        </div>
+                    </div>
+                    {content.main -> f:format.raw()}
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding section-bg" id="section_2">
+            <div class="container">
+                <div class="row">
+                    {content.content -> f:format.raw()}
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section section-padding">
+            <div class="container">
+                <div class="row">
+                    {content.content2 -> f:format.raw()}
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                {footer -> f:format.raw()}
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="copyright-text mb-0">Copyright © 2023 • Lorem Ipsum</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+</f:section>
+<f:section name="bodyScripts">
+</f:section>
+</body>
+</html>

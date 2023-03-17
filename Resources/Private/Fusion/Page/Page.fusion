@@ -1,0 +1,1 @@
+prototype(ISP.BasicStructure:Page) < prototype(ISP.BasicStructure:AbstractPage)

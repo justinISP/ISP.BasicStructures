@@ -1,0 +1,74 @@
+prototype(ISP.BasicStructure:AbstractPage) < prototype(Neos.Neos:Page) {
+
+    imageUri = Neos.Neos:ImageUri {
+        asset = ${q(node).property('image')}
+        maximumWidth = 1920
+        maximumHeight = 1080
+        @if.image = ${q(node).property('image')}
+    }
+    head {
+        stylesheets.site = Neos.Fusion:Template {
+            templatePath = 'resource://ISP.BasicStructure/Private/Templates/Page/Default.html'
+            sectionName = 'stylesheets'
+        }
+        javascripts.site = Neos.Fusion:Template {
+            templatePath = 'resource://ISP.BasicStructure/Private/Templates/Page/Default.html'
+            sectionName = 'headScripts'
+        }
+    }
+    body {
+        templatePath = 'resource://ISP.BasicStructure/Private/Templates/Page/Default.html'
+        sectionName = 'body'
+        imageUri = Neos.Neos:ImageUri {
+            asset = ${q(node).property('image')}
+            maximumWidth = 1920
+            maximumHeight = 1080
+            @if.image = ${q(node).property('image')}
+        }
+        parts {
+            breadcrumb = Neos.Neos:BreadcrumbMenu
+            menu = Neos.Neos:Menu {
+                entryLevel = 1
+                templatePath = 'resource://ISP.BasicStructure/Private/Templates/FusionObjects/MainMenu.html'
+                maximumLevels = 1
+                site = ${site}
+            }
+            languageMenu = Neos.Neos:DimensionsMenu {
+                dimension = 'language'
+            }
+        }
+        content {
+            // The default content section
+            main = Neos.Neos:PrimaryContent {
+                nodePath = 'main'
+            }
+            slider = Neos.Neos:ContentCollection {
+                nodePath = 'slider'
+            }
+            content = Neos.Neos:ContentCollection {
+                nodePath = 'content'
+            }
+            content2 = Neos.Neos:ContentCollection {
+                nodePath = 'content2'
+            }
+            content3 = Neos.Neos:ContentCollection {
+                nodePath = 'content3'
+            }
+            content4 = Neos.Neos:ContentCollection {
+                nodePath = 'content4'
+            }
+        }
+        javascripts.site = Neos.Fusion:Template {
+            templatePath = 'resource://ISP.BasicStructure/Private/Templates/Page/Default.html'
+            sectionName = 'bodyScripts'
+        }
+        TopContact = Neos.Neos:ContentCollection {
+                    nodePath = ${q(site).find('TopContact').property('_path')}
+                    collection = ${q(site).children('TopContact').children()}
+                }
+        footer = Neos.Neos:ContentCollection {
+            nodePath = ${q(site).find('footer').property('_path')}
+            collection = ${q(site).children('footer').children()}
+        }
+    }
+}

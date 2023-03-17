@@ -1,0 +1,28 @@
+{namespace fusion=Neos\Fusion\ViewHelpers}
+{namespace neos=Neos\Neos\ViewHelpers}
+<f:security.ifAccess privilegeTarget="Neos.Neos:Backend.GeneralAccess">
+    <f:then>
+        <div class="accordion-group">
+            <button class="accordion accordion-heading">
+                <div class="accordion-headline"><neos:contentElement.editable property="title">{title -> f:format.raw()}</neos:contentElement.editable></div>
+            </button>
+            <div class="panel" >
+                <div class="accordion-inner">
+                    {contentContainer -> f:format.raw()}
+                </div>
+            </div>
+        </div>
+    </f:then>
+    <f:else>
+        <div class="accordion-group">
+            <button class="accordion accordion-heading">
+                {title -> f:format.raw()}
+            </button>
+            <div id="accordion-{node.name}" class="panel">
+                <div class="accordion-inner">
+                    {contentContainer -> f:format.raw()}
+                </div>
+            </div>
+        </div>
+    </f:else>
+</f:security.ifAccess>

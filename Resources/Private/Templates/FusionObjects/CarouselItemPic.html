@@ -1,0 +1,9 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+<div class="carousel-item">
+    <figure>
+        <f:if condition="{image}">
+            <media:image image="{image}" maximumWidth="1920" alt="{name}" />
+        </f:if>
+    </figure>
+</div>

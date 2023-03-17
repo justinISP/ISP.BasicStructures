@@ -1,0 +1,20 @@
+prototype(ISP.BasicStructure:Accordion) < prototype(Neos.Neos:Content)
+prototype(ISP.BasicStructure:Accordion) {
+    templatePath = 'resource://ISP.BasicStructure/Private/Templates/FusionObjects/Accordion.html'
+
+    accordionItems = Neos.Neos:ContentCollection
+    accordionItems {
+        nodePath = 'items'
+    }
+}
+
+prototype(ISP.BasicStructure:AccordionItem) < prototype(Neos.Neos:Content)
+prototype(ISP.BasicStructure:AccordionItem) {
+    templatePath = 'resource://ISP.BasicStructure/Private/Templates/FusionObjects/AccordionItem.html'
+    title = ${q(node).property('title')}
+    #  text = ${q(node).property('text')}
+    contentContainer = Neos.Neos:ContentCollection
+    contentContainer {
+        nodePath = 'content'
+    }
+}

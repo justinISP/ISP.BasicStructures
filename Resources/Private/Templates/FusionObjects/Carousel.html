@@ -1,0 +1,32 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+
+<div class="slidercarousel">
+    <div class="carousel slide" id="{node.identifier}">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+            <f:for each="{carouselItemArray}" as="item" iteration="itemIterator">
+                <li data-target="#{node.identifier}" data-slide-to="{itemIterator.index}" class="{f:if(condition: itemIterator.isFirst, then: 'active')}"></li>
+            </f:for>
+        </ol>
+        <!-- Wrapper for slides -->
+        {carouselItems -> f:format.raw()}
+        <!-- Controls
+        <a class="left carousel-control" href="#{node.identifier}" data-slide="prev">
+            <span class="icon-prev"></span>
+        </a>
+        <a class="right carousel-control" href="#{node.identifier}" data-slide="next">
+            <span class="icon-next"></span>
+        </a>
+        -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#hero-slide" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#hero-slide" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>

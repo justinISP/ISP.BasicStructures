@@ -1,0 +1,19 @@
+{
+    "description": "",
+    "type": "neos-package",
+    "name": "isp/basicstructure",
+    "require": {
+        "neos/flow": "*",
+        "neos/nodetypes": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "ISP\\BasicStructure\\": "Classes/"
+        }
+    },
+    "extra": {
+        "neos": {
+            "package-key": "ISP.BasicStructure"
+        }
+    }
+}

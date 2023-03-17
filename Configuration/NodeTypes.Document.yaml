@@ -1,0 +1,83 @@
+# This is a custom document node type which has been auto-generated for your site package
+# by Neos. You can customize this to your needs.
+'ISP.BasicStructure:Page':
+  superTypes:
+    'Neos.Neos:Document': true
+  ui:
+    icon: file
+    label: 'Basic Startseite'
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+    'slider':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'ISP.BasicStructure:Carousel': TRUE
+        #  'ISP.DSD:CarouselItem': TRUE
+        #  'ISP.DSD:CarouselItemPic': TRUE
+        #  'Neos.NodeTypes:Text': TRUE
+          'Neos.NodeTypes:Image': TRUE
+          'Neos.NodeTypes:TextWithImage': TRUE
+        #  'Neos.NodeTypes:FiveColumn': TRUE
+    'content':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+        #  'Neos.NodeTypes:Headline': TRUE
+        #  'Neos.NodeTypes:Text': TRUE
+        #  'Neos.NodeTypes:Image': TRUE
+        #  'Neos.NodeTypes:TextWithImage': TRUE
+        #  'Neos.NodeTypes:FiveColumn': TRUE
+    'content2':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+          #  'Neos.NodeTypes:Headline': TRUE
+          #  'Neos.NodeTypes:Text': TRUE
+          #  'Neos.NodeTypes:Image': TRUE
+          #  'Neos.NodeTypes:TextWithImage': TRUE
+    'content3':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+          #  'Neos.NodeTypes:Headline': TRUE
+          #  'Neos.NodeTypes:Text': TRUE
+          #  'Neos.NodeTypes:Image': TRUE
+          #  'Neos.NodeTypes:TextWithImage': TRUE
+    'content4':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+          #  'Neos.NodeTypes:Headline': TRUE
+          #  'Neos.NodeTypes:Text': TRUE
+          #  'Neos.NodeTypes:Image': TRUE
+          #  'Neos.NodeTypes:TextWithImage': TRUE
+    'TopContact':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          #  '*': TRUE
+          'Neos.NodeTypes:Text': TRUE
+    'footer':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          #  '*': TRUE
+          'Neos.NodeTypes:Headline': TRUE
+          'Neos.NodeTypes:Text': TRUE
+          'Neos.NodeTypes:Image': TRUE
+          'Neos.NodeTypes:TwoColumn': TRUE
+          'Neos.NodeTypes:ThreeColumn': TRUE
+'ISP.BasicStructure:ContentPage':
+  superTypes:
+    'ISP.BasicStructure:Page': true
+  ui:
+    icon: 'icon-file'
+    label: 'Basic Inhaltsseite'
+    group: 'general'

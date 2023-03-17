@@ -1,0 +1,6 @@
+prototype(ISP.BasicStructure:ContentPage) < prototype(ISP.BasicStructure:Page){
+
+body{
+  templatePath = 'resource://ISP.BasicStructure/Private/Templates/Page/ContentPage.html'
+  }
+}

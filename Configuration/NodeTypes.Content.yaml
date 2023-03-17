@@ -1,0 +1,253 @@
+'Neos.NodeTypes:Text':
+  properties:
+    text:
+      search:
+        zinc:
+          mappingType: 'text'
+          fulltextValue: ${node.properties.text}
+      ui:
+        inline:
+          editorOptions:
+            linking:
+              anchorLink: true
+            formatting:
+              strong: true
+              em: true
+              u: true
+              sub: true
+              sup: true
+              p: true
+              h1: true
+              h2: true
+              h3: true
+              h4: true
+              h5: false
+              h6: false
+              code: false
+              removeFormat: true
+              table: true
+              a: true
+              ul: true
+              ol: true
+              left: true
+              center: true
+              right: true
+              justify: true
+'Neos.NodeTypes:Headline':
+  properties:
+    title:
+      ui:
+        inline:
+          editorOptions:
+            linking:
+              anchorLink: true
+            formatting:
+              strong: true
+              h1: true
+              h2: true
+              h3: true
+              h4: true
+              h5: true
+              h6: false
+              removeFormat: true
+              sub: true
+              sup: true
+              a: true
+              left: true
+              center: true
+              right: true
+              justify: true
+'Neos.NodeTypes:TextWithImage':
+  properties:
+    text:
+      ui:
+        inline:
+          editorOptions:
+            linking:
+              anchorLink: true
+            formatting:
+              strong: true
+              em: true
+              u: true
+              sub: true
+              sup: true
+              p: true
+              h1: true
+              h2: true
+              h3: true
+              h4: true
+              h5: true
+              h6: false
+              code: false
+              removeFormat: true
+              table: true
+              a: true
+              ul: true
+              ol: true
+              left: true
+              center: true
+              right: true
+              justify: true
+'Neos.NodeTypes:TwoColumn':
+  properties:
+    layout:
+      defaultValue: 6-6
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              50-50: null
+              75-25: null
+              25-75: null
+              66-33: null
+              33-66: null
+              6-6:
+                label: '50% / 50%'
+              8-4:
+                label: '66% / 33%'
+              4-8:
+                label: '33% / 66%'
+'Neos.NodeTypes:ThreeColumn':
+  properties:
+    layout:
+      defaultValue: 4-4-4
+      ui:
+        inspector:
+          editorOptions:
+            values:
+              33-33-33: null
+              50-25-25: null
+              25-50-25: null
+              25-25-50: null
+              4-4-4:
+                label: '33% / 33% / 33%'
+              3-6-3:
+                label: '25% / 50% / 25%'
+'ISP.BasicStructure:Video':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Video
+    group: general
+    position: 820
+    inlineEditable: true
+    inspector:
+      groups:
+        resource:
+          label: Resource
+          icon: icon-picture
+          position: 1
+  properties:
+    video:
+      type: Neos\Media\Domain\Model\Asset
+      ui:
+        label: Video
+        reloadIfChanged: true
+        inspector:
+          group: resource
+'ISP.BasicStructure:Carousel':
+  superTypes:
+    'Neos.Neos:Content': true
+  childNodes:
+    carouselItems:
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    label: Carousel
+    group: plugins
+    icon: icon-picture
+    inlineEditable: true
+'ISP.BasicStructure:CarouselItem':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Carousel / Slider Bild (mit Text)
+    group: general
+    position: 820
+    inlineEditable: true
+    inspector:
+      groups:
+        image:
+          label: Text
+          icon: icon-text
+          position: 1
+  properties:
+    headline:
+      type: string
+      defaultValue: 'Überschrift'
+      ui:
+        label: Text
+        reloadIfChanged: true
+        inline:
+          editorOptions:
+            formatting:
+              strong: true
+              a: true
+    text:
+      type: string
+      defaultValue: 'Text'
+      ui:
+        label: Text
+        reloadIfChanged: true
+        inline:
+          editorOptions:
+            formatting:
+              strong: true
+              a: false
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Image
+        reloadIfChanged: true
+        inspector:
+          group: image
+'ISP.BasicStructure:CarouselItemPic':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Carousel / Slider Bild
+    group: general
+    position: 821
+    inlineEditable: true
+    inspector:
+      groups:
+        image:
+          label: Text
+          icon: icon-text
+          position: 1
+  properties:
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Image
+        reloadIfChanged: true
+        inspector:
+          group: image
+'ISP.BasicStructure:Accordion':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Accordion Container'
+    group: structure
+    icon: icon-list
+    inlineEditable: true
+  childNodes:
+    items:
+      type: 'Neos.Neos:ContentCollection'
+'ISP.BasicStructure:AccordionItem':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: 'Accordion Inhalt'
+    group: structure
+    icon: icon-file-text
+    inlineEditable: true
+  childNodes:
+    content:
+      type: 'Neos.Neos:ContentCollection'
+  properties:
+    title:
+      type: string
+      translatable: true
+      defaultValue: 'Titel bitte hier eintragen'
+      ui:
+        inlineEditable: true

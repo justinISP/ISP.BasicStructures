@@ -1,0 +1,11 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+<div class="carousel-item">
+    <f:if condition="{image}">
+        <media:image image="{image}" maximumWidth="1920" alt="{name}" />
+    </f:if>
+    <div class="carousel-caption d-flex flex-column justify-content-end">
+        <h2>{neos:contentElement.editable(property: 'headline')}</h2>
+        {neos:contentElement.editable(property: 'text')}
+    </div>
+</div>

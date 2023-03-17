@@ -1,0 +1,8 @@
+prototype(ISP.BasicStructure:CarouselItem) < prototype(Neos.Neos:Content) {
+    templatePath = 'resource://ISP.BasicStructure/Private/Templates/FusionObjects/CarouselItem.html'
+    headline = ${q(node).property('headline')}
+    headline.@process.convertUris = Neos.Neos:ConvertUris
+    text = ${q(node).property('text')}
+    text.@process.convertUris = Neos.Neos:ConvertUris
+    image = ${q(node).property('image')}
+}

@@ -1,0 +1,9 @@
+prototype(ISP.BasicStructure:Video) < prototype(Neos.Neos:Content) {
+
+  video = Neos.Fusion:ResourceUri {
+      resource = ${q(node).property('video').resource}
+  }
+
+  templatePath = 'resource://ISP.BasicStructure/Private/Templates/FusionObjects/Video.html'
+
+}
