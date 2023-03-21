@@ -33,9 +33,6 @@ prototype(ISP.BasicStructure:AbstractPage) < prototype(Neos.Neos:Page) {
                 maximumLevels = 1
                 site = ${site}
             }
-            languageMenu = Neos.Neos:DimensionsMenu {
-                dimension = 'language'
-            }
         }
         content {
             // The default content section
