@@ -8,6 +8,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="format-detection" content="telephone=yes">
+        <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/bootstrap.min.css', package: 'ISP.BasicStructure')}" media="all" />
+        <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/bootstrap-icons.css', package: 'ISP.BasicStructure')}" media="all" />
+        <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/styles.css', package: 'ISP.BasicStructure')}" media="all" />
     </f:section>
     <f:section name="headScripts">
     </f:section>
@@ -99,10 +102,47 @@
             </div>
         </div>
     </footer>
-
-
 </f:section>
 <f:section name="bodyScripts">
+    <script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/jquery-3.6.1.min.js', package: 'ISP.BasicStructure')}"></script>
+    <script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/bootstrap.min.js', package: 'ISP.BasicStructure')}"></script>
+    <script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/jquery.sticky.js', package: 'ISP.BasicStructure')}"></script>
+    <script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/click-scroll.js', package: 'ISP.BasicStructure')}"></script>
+    <script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/counter.js', package: 'ISP.BasicStructure')}"></script>
+    <script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/custom.js', package: 'ISP.BasicStructure')}"></script>
+    <script>
+	    <![CDATA[
+        // Accordion
+        function toggle(id){
+            var e = document.getElementById(id);
+
+            if (e.style.display == "none"){
+                e.style.display = "";
+            } else {
+                e.style.display = "none";
+            }
+        }
+
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+        // Carousel
+        $('.carousel').carousel({
+            interval: 6000
+        })
+      ]]>
+    </script>    
 </f:section>
 </body>
 </html>
