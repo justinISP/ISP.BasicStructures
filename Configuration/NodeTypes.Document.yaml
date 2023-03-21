@@ -15,60 +15,39 @@
         nodeTypes:
           '*': FALSE
           'ISP.BasicStructure:Carousel': TRUE
-        #  'ISP.DSD:CarouselItem': TRUE
-        #  'ISP.DSD:CarouselItemPic': TRUE
-        #  'Neos.NodeTypes:Text': TRUE
           'Neos.NodeTypes:Image': TRUE
           'Neos.NodeTypes:TextWithImage': TRUE
-        #  'Neos.NodeTypes:FiveColumn': TRUE
     'content':
       type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           '*': TRUE
-        #  'Neos.NodeTypes:Headline': TRUE
-        #  'Neos.NodeTypes:Text': TRUE
-        #  'Neos.NodeTypes:Image': TRUE
-        #  'Neos.NodeTypes:TextWithImage': TRUE
-        #  'Neos.NodeTypes:FiveColumn': TRUE
     'content2':
       type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           '*': TRUE
-          #  'Neos.NodeTypes:Headline': TRUE
-          #  'Neos.NodeTypes:Text': TRUE
-          #  'Neos.NodeTypes:Image': TRUE
-          #  'Neos.NodeTypes:TextWithImage': TRUE
     'content3':
       type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           '*': TRUE
-          #  'Neos.NodeTypes:Headline': TRUE
-          #  'Neos.NodeTypes:Text': TRUE
-          #  'Neos.NodeTypes:Image': TRUE
-          #  'Neos.NodeTypes:TextWithImage': TRUE
     'content4':
       type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
           '*': TRUE
-          #  'Neos.NodeTypes:Headline': TRUE
-          #  'Neos.NodeTypes:Text': TRUE
-          #  'Neos.NodeTypes:Image': TRUE
-          #  'Neos.NodeTypes:TextWithImage': TRUE
     'TopContact':
       type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
-          #  '*': TRUE
+          '*': FALSE
           'Neos.NodeTypes:Text': TRUE
     'footer':
       type: 'Neos.Neos:ContentCollection'
       constraints:
         nodeTypes:
-          #  '*': TRUE
+          '*': FALSE
           'Neos.NodeTypes:Headline': TRUE
           'Neos.NodeTypes:Text': TRUE
           'Neos.NodeTypes:Image': TRUE
