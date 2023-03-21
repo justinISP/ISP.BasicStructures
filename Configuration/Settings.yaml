@@ -1,4 +1,5 @@
-Neos:
-  fusion:
-    autoInclude:
-      'ISP.BasicStructure': true
+Neos:  
+  Neos:
+    fusion:
+      autoInclude:
+        'ISP.BasicStructure': true
