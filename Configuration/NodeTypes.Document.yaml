@@ -60,3 +60,187 @@
     icon: 'icon-file'
     label: 'Basic Inhaltsseite'
     group: 'general'
+'ISP.BasicStructure:OnePage':
+  superTypes:
+    'Neos.Neos:Document': true
+  ui:
+    icon: file
+    label: 'OnePager'
+    inspector:
+      groups:
+        colors:
+          label: Farben
+          icon: 'icon-palette'
+          position: 1100
+          collapsed: true
+        logo:
+          label: Logo
+          icon: 'icon-image'
+          position: 1200
+          collapsed: true
+  childNodes:
+    main:
+      type: 'Neos.Neos:ContentCollection'
+    'slider':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'ISP.OnePage:Carousel': TRUE
+          'Neos.NodeTypes:Image': TRUE
+          'Neos.NodeTypes:TextWithImage': TRUE
+    'content':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+    'content2':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+    'content3':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+    'content4':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': TRUE
+    'TopContact':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'Neos.NodeTypes:Text': TRUE
+    'footer':
+      type: 'Neos.Neos:ContentCollection'
+      constraints:
+        nodeTypes:
+          '*': FALSE
+          'Neos.NodeTypes:Headline': TRUE
+          'Neos.NodeTypes:Text': TRUE
+          'Neos.NodeTypes:Image': TRUE
+          'Neos.NodeTypes:TwoColumn': TRUE
+          'Neos.NodeTypes:ThreeColumn': TRUE
+  properties:
+    logo:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Logo
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'logo'
+          position: 0    
+    cr:
+      type: string
+      defaultValue: 'Copyright © 2023 • Lorem Ipsum'
+      ui:
+        inlineEditable: true
+        inspector:
+          group: null
+        aloha:
+          placeholder: 'Hier Ort eingeben...'
+          format:
+            b: false
+            i: false
+            u: false
+            sub: false
+            sup: false
+            p: true
+            h1: false
+            h2: false
+            h3: false
+            pre: false
+            removeFormat: false
+          table: { }
+          list: { }
+          link:
+            a: true
+          alignment: { }
+    topColor:
+      type: string
+      ui:
+        label: 'Primärfarbe'
+        reloadIfChanged: true
+        inspector:
+          group: 'colors'
+          editor: 'Shel.Neos.ColorPicker/ColorPickerEditor'
+          editorOptions:
+            # `mode` can be one of "rgba", "hsla", "hex", "preset", default: rgba
+            mode: 'rgba'
+            # Show saturation/hue/alpha (optional), boolean, default: false
+            picker: true
+            # Show hex/rgba fields (optional), boolean, default: false
+            fields: true
+            # Show preset colors (optional), array of colors or boolean (to disable)
+            presetColors: ['#ff0000', '#0000ff', '#ffff00', ...]
+            # OR you can show presetColors with alternative titles, that will be shown on hover
+            # presetColors: [{color: '#ff0000', title: 'red'}, {color: '#0000ff', title: 'blue'}, {color: '#ffff00', title: 'yellow'}]
+            # Hides the reset button if set to false
+            allowEmpty: true
+    crColor:
+      type: string
+      ui:
+        label: 'Sekundärfarbe'
+        reloadIfChanged: true
+        inspector:
+          group: 'colors'
+          editor: 'Shel.Neos.ColorPicker/ColorPickerEditor'
+          editorOptions:
+            # `mode` can be one of "rgba", "hsla", "hex", "preset", default: rgba
+            mode: 'rgba'
+            # Show saturation/hue/alpha (optional), boolean, default: false
+            picker: true
+            # Show hex/rgba fields (optional), boolean, default: false
+            fields: true
+            # Show preset colors (optional), array of colors or boolean (to disable)
+            presetColors: ['#ff0000', '#0000ff', '#ffff00', ...]
+            # OR you can show presetColors with alternative titles, that will be shown on hover
+            # presetColors: [{color: '#ff0000', title: 'red'}, {color: '#0000ff', title: 'blue'}, {color: '#ffff00', title: 'yellow'}]
+            # Hides the reset button if set to false
+            allowEmpty: true
+    contentColor:
+      type: string
+      ui:
+        label: 'Hintergrundfarbe Inhalt'
+        reloadIfChanged: true
+        inspector:
+          group: 'colors'
+          editor: 'Shel.Neos.ColorPicker/ColorPickerEditor'
+          editorOptions:
+            # `mode` can be one of "rgba", "hsla", "hex", "preset", default: rgba
+            mode: 'rgba'
+            # Show saturation/hue/alpha (optional), boolean, default: false
+            picker: true
+            # Show hex/rgba fields (optional), boolean, default: false
+            fields: true
+            # Show preset colors (optional), array of colors or boolean (to disable)
+            presetColors: ['#ff0000', '#0000ff', '#ffff00', ...]
+            # OR you can show presetColors with alternative titles, that will be shown on hover
+            # presetColors: [{color: '#ff0000', title: 'red'}, {color: '#0000ff', title: 'blue'}, {color: '#ffff00', title: 'yellow'}]
+            # Hides the reset button if set to false
+            allowEmpty: true
+    footerColor:
+      type: string
+      ui:
+        label: 'Footerfarbe'
+        reloadIfChanged: true
+        inspector:
+          group: 'colors'
+          editor: 'Shel.Neos.ColorPicker/ColorPickerEditor'
+          editorOptions:
+            # `mode` can be one of "rgba", "hsla", "hex", "preset", default: rgba
+            mode: 'rgba'
+            # Show saturation/hue/alpha (optional), boolean, default: false
+            picker: true
+            # Show hex/rgba fields (optional), boolean, default: false
+            fields: true
+            # Show preset colors (optional), array of colors or boolean (to disable)
+            presetColors: ['#ff0000', '#0000ff', '#ffff00', ...]
+            # OR you can show presetColors with alternative titles, that will be shown on hover
+            # presetColors: [{color: '#ff0000', title: 'red'}, {color: '#0000ff', title: 'blue'}, {color: '#ffff00', title: 'yellow'}]
+            # Hides the reset button if set to false
+            allowEmpty: true
