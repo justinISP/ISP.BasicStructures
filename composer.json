@@ -4,7 +4,8 @@
     "name": "isp/basicstructure",
     "require": {
         "neos/flow": "*",
-        "neos/nodetypes": "*"
+        "neos/nodetypes": "*",
+        "shel/neos-colorpicker": "*"
     },
     "autoload": {
         "psr-4": {
