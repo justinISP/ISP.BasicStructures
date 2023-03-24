@@ -1,0 +1,152 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+
+<head>
+    <f:section name="stylesheets">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="format-detection" content="telephone=yes">
+        <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/bootstrap.min.css', package: 'ISP.OnePage')}" media="all" />
+        <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/bootstrap-icons.css', package: 'ISP.OnePage')}" media="all" />
+        <link rel="stylesheet" href="{f:uri.resource(path: 'Styles/styles.css', package: 'ISP.OnePage')}" media="all" />
+    </f:section>
+    <f:section name="headScripts">
+    </f:section>
+</head>
+<body>
+<f:section name="body">
+
+      <header class="site-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-12 d-flex flex-wrap">
+                    {parts.TopContact -> f:format.raw()}
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg bg-light shadow-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <f:if condition="{logo}">
+                  <f:then>
+                    <media:image class="img-fluid" image="{logo}" maximumWidth="125" allowUpScaling="TRUE" alt="Logo" />
+                  </f:then>
+                  <f:else>
+                    <img src="{f:uri.resource(path: 'Images/logo_dummy.png', package: 'ISP.OnePage')}" alt="Dummy-Logo" title="Home">
+                  </f:else>
+                </f:if>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                {parts.menu -> f:format.raw()}
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero-section hero-section-full-height">
+            <div class="container-fluid">
+                <div class="row">
+                     {content.slider -> f:format.raw()}
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding">
+            <div class="container">
+                <div class="row">
+                    {content.main -> f:format.raw()}
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding section-bg" id="section_2">
+            <div class="container">
+                <div class="row">
+                    {content.content -> f:format.raw()}
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section section-padding">
+            <div class="container">
+                <div class="row">
+                    {content.content2 -> f:format.raw()}
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="row">
+                {parts.footer -> f:format.raw()}
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <neos:contentElement.wrap>
+                      	  <neos:contentElement.editable class="copyright-text mb-0" property="cr" tag="p" />
+                      	</neos:contentElement.wrap>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</f:section>
+<f:section name="bodyScripts">
+    <script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/jquery-3.6.1.min.js', package: 'ISP.OnePage')}"></script>
+    <script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/bootstrap.min.js', package: 'ISP.OnePage')}"></script>
+    <script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/jquery.sticky.js', package: 'ISP.OnePage')}"></script>
+    <script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/click-scroll.js', package: 'ISP.OnePage')}"></script>
+    <script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/counter.js', package: 'ISP.OnePage')}"></script>
+    <script type="text/javascript" src="{f:uri.resource(path: 'JavaScript/custom.js', package: 'ISP.OnePage')}"></script>
+    <script>
+	    <![CDATA[
+        // Accordion
+        function toggle(id){
+            var e = document.getElementById(id);
+
+            if (e.style.display == "none"){
+                e.style.display = "";
+            } else {
+                e.style.display = "none";
+            }
+        }
+
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+
+        for (i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        }
+        // Carousel
+        $('.carousel').carousel({
+            interval: 6000
+        })
+      ]]>
+    </script>
+</f:section>
+</body>
+</html>
