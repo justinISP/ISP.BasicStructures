@@ -1,0 +1,83 @@
+prototype(ISP.BasicStructure:OnePage) < prototype(Neos.Neos:Page) {
+
+  htmlTag = Neos.Fusion:Tag {
+    @position = 'start'
+    tagName = 'html'
+    omitClosingTag = true
+
+    attributes {
+            style = ${'--primary-color: ' + q(node).property('topColor') + '; --custom-btn-bg-hover-color: ' + q(node).property('topColor') + '; --secondary-color: ' + q(node).property('crColor') + '; --section-bg-color: ' + q(node).property('contentColor') + '; --site-footer-bg-color: ' + q(node).property('footerColor') + ';'}
+    }
+  }
+
+    imageUri = Neos.Neos:ImageUri {
+        asset = ${q(node).property('image')}
+        maximumWidth = 1920
+        maximumHeight = 1080
+        @if.image = ${q(node).property('image')}
+    }
+    head {
+        stylesheets.site = Neos.Fusion:Template {
+            templatePath = 'resource://ISP.BasicStructure/Private/Templates/Page/OnePage.html'
+            sectionName = 'stylesheets'
+        }
+        javascripts.site = Neos.Fusion:Template {
+            templatePath = 'resource://ISP.BasicStructure/Private/Templates/Page/OnePage.html'
+            sectionName = 'headScripts'
+        }
+    }
+    body {
+
+        cr = ${q(node).property('cr')}
+        logo = ${q(node).property('logo')}
+
+        templatePath = 'resource://ISP.BasicStructure/Private/Templates/Page/OnePage.html'
+        sectionName = 'body'
+        imageUri = Neos.Neos:ImageUri {
+            asset = ${q(node).property('image')}
+            maximumWidth = 1920
+            maximumHeight = 1080
+            @if.image = ${q(node).property('image')}
+        }
+        parts {
+            breadcrumb = Neos.Neos:BreadcrumbMenu
+            menu = Neos.Neos:Menu {
+                entryLevel = 1
+                templatePath = 'resource://ISP.BasicStructure/Private/Templates/FusionObjects/MainMenu.html'
+                maximumLevels = 1
+                site = ${site}
+            }
+        }
+        content {
+            // The default content section
+            main = Neos.Neos:PrimaryContent {
+                nodePath = 'main'
+            }
+            slider = Neos.Neos:ContentCollection {
+                nodePath = 'slider'
+            }
+            content = Neos.Neos:ContentCollection {
+                nodePath = 'content'
+            }
+            content2 = Neos.Neos:ContentCollection {
+                nodePath = 'content2'
+            }
+            content3 = Neos.Neos:ContentCollection {
+                nodePath = 'content3'
+            }
+            content4 = Neos.Neos:ContentCollection {
+                nodePath = 'content4'
+            }
+            footer = Neos.Neos:ContentCollection {
+                nodePath = 'footer'
+            }
+            TopContact = Neos.Neos:ContentCollection {
+                nodePath = 'TopContact'
+            }
+        }
+        javascripts.site = Neos.Fusion:Template {
+            templatePath = 'resource://ISP.BasicStructure/Private/Templates/Page/OnePage.html'
+            sectionName = 'bodyScripts'
+        }
+    }
+}
