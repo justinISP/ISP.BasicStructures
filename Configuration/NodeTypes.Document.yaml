@@ -63,6 +63,10 @@
 'ISP.BasicStructure:OnePage':
   superTypes:
     'Neos.Neos:Document': true
+  constraints:
+    nodeTypes:
+      '*': false
+      'Neos.Neos:Shortcut': true
   ui:
     icon: file
     label: 'OnePager'
