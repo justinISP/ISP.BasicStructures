@@ -29,7 +29,9 @@ prototype(ISP.BasicStructure:OnePage) < prototype(Neos.Neos:Page) {
     body {
 
         cr = ${q(node).property('cr')}
-        logo = ${q(node).property('logo')}
+        logo = Neos.Fusion:ResourceUri {
+            resource = ${q(node).property('logo').resource}
+        }
 
         templatePath = 'resource://ISP.BasicStructure/Private/Templates/Page/OnePage.html'
         sectionName = 'body'
