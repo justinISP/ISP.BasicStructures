@@ -33,7 +33,7 @@
             <a class="navbar-brand" href="/">
                 <f:if condition="{logo}">
                   <f:then>
-                    <media:image class="img-fluid" image="{logo}" maximumWidth="125" allowUpScaling="TRUE" alt="Logo" />
+                    <img src="{logo}" width="125px" height="50px" alt="Logo" />
                   </f:then>
                   <f:else>
                     <img src="{f:uri.resource(path: 'Images/logo_dummy.png', package: 'ISP.BasicStructure')}" alt="Dummy-Logo" title="Home">
