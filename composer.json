@@ -1,7 +1,7 @@
 {
     "description": "",
     "type": "neos-package",
-    "name": "isp/basicstructure",
+    "name": "isp/basicstructures",
     "require": {
         "neos/flow": "*",
         "neos/nodetypes": "*",
