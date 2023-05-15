@@ -5,6 +5,11 @@
     "require": {
         "neos/flow": "*",
         "neos/nodetypes": "*",
+        "neos/nodetypes-html": "*",
+        "neos/nodetypes-contentreferences": "*",
+        "neos/nodetypes-basemixins": "*",
+        "neos/nodetypes-assetlist": "*",
+        "neos/nodetypes-navigation": "*",
         "shel/neos-colorpicker": "*"
     },
     "autoload": {
