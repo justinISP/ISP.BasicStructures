@@ -1,13 +1,6 @@
 # This is a custom document node type which has been auto-generated for your site package
 # by Neos. You can customize this to your needs.
 'ISP.BasicStructure:Page':
-  constraints:
-    nodeTypes:
-      '*': true
-      'ISP.BasicStructure:OnePage': false
-      'Neos.NodeTypes:Page': false
-      'ISP.BasicStructure:Page': false
-      'ISP.BasicStructure:ContentPage': false
   superTypes:
     'Neos.Neos:Document': true
   ui:
