@@ -3,6 +3,7 @@
 'ISP.BasicStructure:Page':
   constraints:
     nodeTypes:
+      '*': true
       'ISP.BasicStructure:OnePage': false
       'Neos.NodeTypes:Page': false
       'ISP.BasicStructure:Page': false
