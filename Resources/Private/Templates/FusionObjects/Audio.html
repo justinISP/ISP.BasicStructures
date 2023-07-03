@@ -1,0 +1,15 @@
+{namespace neos=Neos\Neos\ViewHelpers}
+{namespace fusion=Neos\Fusion\ViewHelpers}
+{namespace media=Neos\Media\ViewHelpers}
+
+<f:if condition="{audio}">
+ <f:then>
+  <audio controls>
+    <source src="{f:uri.resource(resource: audio.resource)}" type="audio/mpeg">
+    Ihr Browser unterstützt die Wiedergabe des Media-Players nicht. Um die Inhalte anzuhören wechseln Sie bitte Ihren Browser.
+  </audio>
+ </f:then>
+ <f:else>
+  <h1>Audio-Datei bitte im Inspektor auswählen.</h1>
+ </f:else>
+</f:if>
