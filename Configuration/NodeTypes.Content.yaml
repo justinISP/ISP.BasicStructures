@@ -251,3 +251,27 @@
       defaultValue: 'Titel bitte hier eintragen'
       ui:
         inlineEditable: true
+'ISP.BasicStructure:Audio':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui:
+    label: Audio-Interface
+    icon: icon-file-audio
+    group: general
+    position: 21
+    inspector:
+      groups:
+        audio:
+          label: Audio
+          icon: icon-file-audio
+          position: 1
+  properties:
+    audio:
+      type: Neos\Media\Domain\Model\Asset
+      ui:
+        label: Audio-Upload
+        reloadIfChanged: TRUE
+        inspector:
+          group: 'audio'
+      constraints:
+        mediaTypes: 'application/mp3'        
