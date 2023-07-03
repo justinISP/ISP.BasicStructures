@@ -1,0 +1,16 @@
+prototype(ISP.BasicStructure:AudioFile) < prototype(Neos.Neos:Content) {
+
+  templatePath = 'resource://ISP.BasicStructure/Private/Templates/Content/AudioFile.html'
+
+  audio = ${q(node).property('audio')}
+
+  @cache {
+          mode = 'uncached'
+          context {
+                  1 = 'node'
+                  2 = 'site'
+                  3 = 'documentNode'
+          }
+  }
+
+}
