@@ -1,6 +1,6 @@
 prototype(ISP.BasicStructure:AudioFile) < prototype(Neos.Neos:Content) {
 
-  templatePath = 'resource://ISP.BasicStructure/Private/Templates/Content/AudioFile.html'
+  templatePath = 'resource://ISP.BasicStructure/Private/Templates/FusionObjects/AudioFile.html'
 
   audio = ${q(node).property('audio')}
 
