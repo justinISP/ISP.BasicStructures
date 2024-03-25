@@ -20,25 +20,25 @@ prototype(ISP.BasicStructure:Carousel) < prototype(Neos.Neos:ContentComponent) {
 
     renderer = afx`
         <div>
-            <div class="carousel slide" id={props.identifier}>
+            <div class="carousel slide" id={props.identifier} data-bs-ride="true">
 
-                <ol class="carousel-indicators">
+                <div class="carousel-indicators">
                     <Neos.Fusion:Loop items={Array.range(1, props.carouselItemNumber)} itemName="index" iterationName="iterator">
                         <li
-                            data-target={'#' + props.identifier}
-                            data-slide-to={iterator.index}
+                            data-bs-target={'#' + props.identifier}
+                            data-bs-slide-to={iterator.index}
                             class={iterator.isFirst ? 'active' : ''}
                         ></li>
                     </Neos.Fusion:Loop>
-                </ol>
+                </div>
 
                 {props.carouselItems}
 
-                <a class="carousel-control-prev" href={'#' + props.identifier} data-slide="prev">
+                <a class="carousel-control-prev" href={'#' + props.identifier} data-bs-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Previous</span>
                 </a>
-                <a class="carousel-control-next" href={'#' + props.identifier} data-slide="next">
+                <a class="carousel-control-next" href={'#' + props.identifier} data-bs-slide="next">
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">Next</span>
                 </a>
