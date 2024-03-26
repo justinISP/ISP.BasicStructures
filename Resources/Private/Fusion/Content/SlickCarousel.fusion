@@ -1,0 +1,22 @@
+##
+# "Carousel" element
+#
+prototype(ISP.BasicStructure:SlickCarousel) < prototype(Neos.Neos:ContentComponent) {
+    identifier = ${'id-' + q(node).property('_identifier')}
+
+    carouselItems = Neos.Neos:ContentCollection {
+        nodePath = 'carouselitems'
+        attributes {
+            class = 'tn-slider'
+            dir = 'rtl'
+        }    
+    }
+
+    renderer = afx`
+        <div>
+            <div class="caruslider" id={props.identifier}>
+                {props.carouselItems}
+            </div>
+        </div>
+    `
+}
