@@ -275,3 +275,14 @@
           group: 'audio'
       constraints:
         mediaTypes: 'application/mp3'        
+'ISP.BasicStructure:SlickCarousel':
+  superTypes:
+    'Neos.Neos:Content': true
+  childNodes:
+    carouselItems:
+      type: 'Neos.Neos:ContentCollection'
+  ui:
+    label: Slider / Carousel (Slick)
+    group: plugins
+    icon: icon-picture
+    inlineEditable: true
