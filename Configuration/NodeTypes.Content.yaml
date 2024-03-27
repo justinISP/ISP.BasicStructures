@@ -171,9 +171,43 @@
     title:
       type: string
       translatable: true
-      defaultValue: 'Titel bitte hier eintragen'
       ui:
         inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Titel bitte hier eintragen'
+    teaser:
+      type: string
+      translatable: true
+      ui:
+        inlineEditable: true
+        inline:
+          editorOptions:
+            placeholder: 'Teaser bitte hier eintragen'
+            formatting:
+              strong: true
+              em: true
+              sub: true
+              sup: true
+              p: true
+              h1: false
+              h2: false
+              h3: false
+              h4: false
+              h5: false
+              h6: false
+              pre: true
+              underline: true
+              strikethrough: true
+              removeFormat: true
+              left: true
+              right: true
+              center: true
+              justify: true
+              table: true
+              ol: true
+              ul: true
+              a: true  
 'ISP.BasicStructure:Audio':
   superTypes:
     'Neos.Neos:Content': true
