@@ -145,83 +145,6 @@
         reloadIfChanged: true
         inspector:
           group: resource
-'ISP.BasicStructure:Carousel':
-  superTypes:
-    'Neos.Neos:Content': true
-  childNodes:
-    carouselItems:
-      type: 'Neos.Neos:ContentCollection'
-  ui:
-    label: Carousel
-    group: plugins
-    icon: icon-picture
-    inlineEditable: true
-'ISP.BasicStructure:CarouselItem':
-  superTypes:
-    'Neos.Neos:Content': true
-  ui:
-    label: Carousel / Slider Bild (mit Text)
-    group: general
-    position: 820
-    inlineEditable: true
-    inspector:
-      groups:
-        image:
-          label: Text
-          icon: icon-text
-          position: 1
-  properties:
-    headline:
-      type: string
-      defaultValue: 'Überschrift'
-      ui:
-        label: Text
-        reloadIfChanged: true
-        inline:
-          editorOptions:
-            formatting:
-              strong: true
-              a: true
-    text:
-      type: string
-      defaultValue: 'Text'
-      ui:
-        label: Text
-        reloadIfChanged: true
-        inline:
-          editorOptions:
-            formatting:
-              strong: true
-              a: false
-    image:
-      type: Neos\Media\Domain\Model\ImageInterface
-      ui:
-        label: Image
-        reloadIfChanged: true
-        inspector:
-          group: image
-'ISP.BasicStructure:CarouselItemPic':
-  superTypes:
-    'Neos.Neos:Content': true
-  ui:
-    label: Carousel / Slider Bild
-    group: general
-    position: 821
-    inlineEditable: true
-    inspector:
-      groups:
-        image:
-          label: Text
-          icon: icon-text
-          position: 1
-  properties:
-    image:
-      type: Neos\Media\Domain\Model\ImageInterface
-      ui:
-        label: Image
-        reloadIfChanged: true
-        inspector:
-          group: image
 'ISP.BasicStructure:Accordion':
   superTypes:
     'Neos.Neos:Content': true
@@ -286,3 +209,82 @@
     group: plugins
     icon: icon-picture
     inlineEditable: true
+    
+### DEPRECATED BOOTSTRAP CAROUSEL ###
+'ISP.BasicStructure:Carousel':
+  superTypes:
+    'Neos.Neos:Content': true
+  childNodes:
+    carouselItems:
+      type: 'Neos.Neos:ContentCollection'
+  ui: ~
+    #label: Carousel
+    #group: plugins
+    #icon: icon-picture
+    #inlineEditable: true
+'ISP.BasicStructure:CarouselItem':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui: ~
+    #label: Carousel / Slider Bild (mit Text)
+    #group: general
+    #position: 820
+    #inlineEditable: true
+    #inspector:
+    #  groups:
+    #    image:
+    #      label: Text
+    #      icon: icon-text
+    #      position: 1
+  properties:
+    headline:
+      type: string
+      defaultValue: 'Überschrift'
+      ui:
+        label: Text
+        reloadIfChanged: true
+        inline:
+          editorOptions:
+            formatting:
+              strong: true
+              a: true
+    text:
+      type: string
+      defaultValue: 'Text'
+      ui:
+        label: Text
+        reloadIfChanged: true
+        inline:
+          editorOptions:
+            formatting:
+              strong: true
+              a: false
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Image
+        reloadIfChanged: true
+        inspector:
+          group: image
+'ISP.BasicStructure:CarouselItemPic':
+  superTypes:
+    'Neos.Neos:Content': true
+  ui: ~
+    #label: Carousel / Slider Bild
+    #group: general
+    #position: 821
+    #inlineEditable: true
+    #inspector:
+    #  groups:
+    #    image:
+    #      label: Text
+    #      icon: icon-text
+    #      position: 1
+  properties:
+    image:
+      type: Neos\Media\Domain\Model\ImageInterface
+      ui:
+        label: Image
+        reloadIfChanged: true
+        inspector:
+          group: image
