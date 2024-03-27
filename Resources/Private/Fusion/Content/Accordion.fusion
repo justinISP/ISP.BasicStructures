@@ -12,7 +12,7 @@ prototype(ISP.BasicStructure:AccordionItem) < prototype(Neos.Neos:Content)
 prototype(ISP.BasicStructure:AccordionItem) {
     templatePath = 'resource://ISP.BasicStructure/Private/Templates/FusionObjects/AccordionItem.html'
     title = ${q(node).property('title')}
-    #  text = ${q(node).property('text')}
+    teaser = ${q(node).property('teaser')}
     contentContainer = Neos.Neos:ContentCollection
     contentContainer {
         nodePath = 'content'
