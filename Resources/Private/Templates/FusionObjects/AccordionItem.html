@@ -6,6 +6,9 @@
             <button class="accordion accordion-heading">
                 <div class="accordion-headline"><neos:contentElement.editable property="title">{title -> f:format.raw()}</neos:contentElement.editable></div>
             </button>
+            <div class="accordion teaser">
+                <neos:contentElement.editable property="teaser">{teaser -> f:format.raw()}</neos:contentElement.editable>
+            </div>
             <div class="panel" >
                 <div class="accordion-inner">
                     {contentContainer -> f:format.raw()}
@@ -18,6 +21,11 @@
             <button class="accordion accordion-heading">
                 {title -> f:format.raw()}
             </button>
+            <f:if condition="{teaser}">
+              <div class="accordion teaser">
+                {teaser -> f:format.raw()}
+              </div>
+            </f:if>    
             <div id="accordion-{node.name}" class="panel">
                 <div class="accordion-inner">
                     {contentContainer -> f:format.raw()}
