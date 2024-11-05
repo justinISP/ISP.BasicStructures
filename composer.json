@@ -9,8 +9,7 @@
         "neos/nodetypes-contentreferences": "*",
         "neos/nodetypes-basemixins": "*",
         "neos/nodetypes-assetlist": "*",
-        "neos/nodetypes-navigation": "*",
-        "shel/neos-colorpicker": "*"
+        "neos/nodetypes-navigation": "*"
     },
     "autoload": {
         "psr-4": {
