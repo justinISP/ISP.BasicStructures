@@ -6,7 +6,33 @@ prototype(ISP.BasicStructure:OnePage) < prototype(Neos.Neos:Page) {
     omitClosingTag = true
 
     attributes {
-            style = ${'--primary-color: ' + q(node).property('topColor') + '; --custom-btn-bg-hover-color: ' + q(node).property('topColor') + '; --secondary-color: ' + q(node).property('crColor') + '; --section-bg-color: ' + q(node).property('contentColor') + '; --site-footer-bg-color: ' + q(node).property('footerColor') + ';'}
+
+            style = Neos.Fusion:Case {
+                orangeCon {
+                        condition = ${q(node).property('color') == 'orange'}
+                        renderer = ${'--primary-color: #FF921C; --custom-btn-bg-hover-color: #FF921C; --secondary-color: #ECA427; --section-bg-color: #ECA427; --site-footer-bg-color: #FF921C;'}
+                }
+                fuchsiaCon {
+                        condition = ${q(node).property('color') == 'fuchsia'}
+                        renderer = ${'--primary-color: #D8125B; --custom-btn-bg-hover-color: #D8125B; --secondary-color: #2C2E39; --section-bg-color: #2C2E39; --site-footer-bg-color: #D8125B;'}
+                }
+                greenCon {
+                        condition = ${q(node).property('color') == 'green'}
+                        renderer = ${'--primary-color: #205A28; --custom-btn-bg-hover-color: #205A28; --secondary-color: #C72B32; --section-bg-color: #FFFFFF; --site-footer-bg-color: #205A28;'}
+                }
+                pinkCon {
+                        condition = ${q(node).property('color') == 'pink'}
+                        renderer = ${'--primary-color: #FF78AC; --custom-btn-bg-hover-color: #FF78AC; --secondary-color: #A8D5E3; --section-bg-color: #F2F0EA; --site-footer-bg-color: #FF78AC;'}
+                }
+                creamCon {
+                        condition = ${q(node).property('color') == 'cream'}
+                        renderer = ${'--primary-color: #FFFDF2; --custom-btn-bg-hover-color: #000000; --secondary-color: #000000; --section-bg-color: #FFFDF2; --site-footer-bg-color: #000000;'}
+                }
+                jungleCon {
+                        condition = ${q(node).property('color') == 'jungle'}
+                        renderer = ${'--primary-color: #009B4D; --custom-btn-bg-hover-color: #009B4D; --secondary-color: #FFCC00; --section-bg-color: #FAF5E9; --site-footer-bg-color: #009B4D;'}
+                }
+            }
     }
   }
 
