@@ -164,3 +164,32 @@
           link:
             a: true
           alignment: { }
+    topColor:
+      type: string
+      ui:
+        showInCreationDialog: true    
+        reloadIfChanged: true  
+        label: 'Farbwahl'
+        inspector:
+          group: 'general'
+          editor: 'Neos.Neos/Inspector/Editors/SelectBoxEditor'
+          editorOptions:
+            values:
+              orange:
+                label: 'Orange & Yellow'
+                icon: 'resource://ISP.BasicStructures/Icons/orange.svg'
+              fuchsia:
+                label: 'Fuchsia & Dark Grey'
+                icon: 'resource://ISP.BasicStructures/Icons/fuchsia.svg'
+              green:
+                label: 'Green & Red & White'
+                icon: 'resource://ISP.BasicStructures/Icons/green.svg'
+              pink:
+                label: 'Pink & Teal & Cream'
+                icon: 'resource://ISP.BasicStructures/Icons/pink.svg'
+              cream:
+                label: 'Cream & Black'
+                icon: 'resource://ISP.BasicStructures/Icons/cream.svg'
+              jungle:
+                label: 'Green & Tangerine Yellow & Ivory'
+                icon: 'resource://ISP.BasicStructures/Icons/jungle.svg'
